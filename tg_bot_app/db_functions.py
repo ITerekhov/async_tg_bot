@@ -29,23 +29,6 @@ def get_random_recipe():
         return result_data
     return None
 
-def add_recipe():
-    recipe_name = input('Введите название блюда: ')
-    receipt = input('Введите рецепт: ')
-    recipe = Recipe(name = recipe_name, receipt=receipt)
-    ingridients = []
-    flag = input('Будете добавлять ещё ингридиенты? [y/n]')
-    while flag == 'y':
-        i = Ingridient(name=input('Введите название: '),
-                       proportions = input('Введите количество: '),
-                       recipe=recipe)
-        ingridients.append(i)
-        flag = input('Будете добавлять ещё ингридиенты? [y/n]')
-    session = Session(bind=engine)
-    session.add_all([recipe, *ingridients])    
-    session.commit()   
-
-
 def get_info_by_name(name:str):
     session = Session(bind=engine)
     recipe = session.query(Recipe).filter(Recipe.name.contains(name)).first()
