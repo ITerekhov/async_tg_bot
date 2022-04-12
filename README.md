@@ -1,5 +1,5 @@
 # async_tg_bot
-##T g-bot that gives you recipes at your request. Written using aiogram and postgresql database
+## Tg-bot that gives you recipes at your request. Written using aiogram and postgresql database
 
 ### Установка
 Для корректной работы необходимо установить все модули из файла *requirements.txt*. Для этого введите у себя в консоли:
